@@ -5,3 +5,15 @@ h1 {
 .meustring {
     color: blueviolet;
 }
+
+.paragrafo {
+    color: red;
+    font-size: 20px;
+    background-color: yellow;
+    padding: 30px;
+}
+
+#caceta {
+    color:brown;
+    background-color: aqua;
+}
