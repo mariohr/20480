@@ -14,30 +14,9 @@
 </head>
 
 <body>
-  <h1>titulo</h1>
-  <p>
-    <strong>hi regasso</strong>
-  </p>
-  <p>
-    <strong>hi2</strong>
-  </p>
-  <h2>
-    minha lista2
-  </h2>
-  <ol>
-    <li>item 2</li>
-    <li>item 1</li>
-    <li>item 4</li>
-  </ol>
-  <ul>
-    <li>item 1</li>
-    <li>item 2</li>
-  </ul>
-  <img src="https://marketingdeconteudo.com/wp-content/uploads/2017/01/formatos-de-imagem-2.jpg" height="100" width="100">
-  <p>
-    <a href="https://www.google.com" target="_blank">Google</a>
-  </p>
-
+  <div id="app">
+    {{ message }}
+  </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -46,6 +25,15 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    })
+  </script>
 </body>
 
 </html>
