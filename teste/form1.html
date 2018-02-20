@@ -11,9 +11,19 @@
 </head>
 
 <body>
-    <form action="http://meudominio.com.br/cadastrausuario/" method="POST">
-        <input type="text" value="teste">
-        <input type="button" value="botao">
+    <h1>cadastro</h1>
+    <form action="http://httpbin.org/post" method="POST" target="_blank">
+        <label>Codigo:</label>
+        <input type="text" name="codigo" id="codigo">
+        <label>Email:</label>
+        <input type="email" name="email" id="email">
+        <label>senha:</label>
+        <input type="password" name="password" id="password">
+        <input type="color" name="cor" id="cor">
+        <p>
+            <input type="submit" value="mandar">
+        </p>
+
     </form>
 </body>
 
