@@ -11,7 +11,7 @@
 
 <body>
     <div id="app">
-        <h1>{{ message }}</h1>
+        <h5>{{ message }}</h5>
         <h2>Usuarios</h2>
         <ul>
             <li v-for="user in users">
@@ -35,7 +35,7 @@
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Teste',
+                message: 'Teste (jsonplaceholder.typicode.com)',
                 title: '',
                 activeuser: '',
                 posts: [],
