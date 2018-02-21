@@ -1,0 +1,4 @@
+C:\Users\Student\mario\20480\LabFiles\Mod03\Labfiles\Starter\Exercise 1\ContosoConf\bin\ContosoConf.dll
+C:\Users\Student\mario\20480\LabFiles\Mod03\Labfiles\Starter\Exercise 1\ContosoConf\bin\ContosoConf.pdb
+C:\Users\Student\mario\20480\LabFiles\Mod03\Labfiles\Starter\Exercise 1\ContosoConf\obj\Debug\ContosoConf.dll
+C:\Users\Student\mario\20480\LabFiles\Mod03\Labfiles\Starter\Exercise 1\ContosoConf\obj\Debug\ContosoConf.pdb
