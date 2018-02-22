@@ -14,6 +14,7 @@
     <div id="app">
         <h5>{{ message }}</h5>
         <h2>Usuarios</h2>
+        <i v-show="loading" class="fa fa-spinner fa-spin"></i>
         <!-- reset: limpa activeuser -->
         <a href='#' v-on:click="activeuser = ''">reset</a>
         <!-- lista usuarios -->
@@ -46,7 +47,7 @@
             el: '#app',
             data: {
                 message: 'Teste Vue (jsonplaceholder.typicode.com)',
-                loading: false,
+                loading: true,
                 title: '',
                 activeuser: '',
                 posts: [],
@@ -78,7 +79,12 @@
                     .then(function (json) {
                         console.log(json);
                         app._data.users = json;
+                        app._data.loading = false;
                     })
+                    .catch(function(){
+                        app._data.message = 'falha ao carregar dados';
+                        console.log('falha');
+                    });
             }
         });
 
