@@ -7,12 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aula 3</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div id="app">
         <h5>{{ message }}</h5>
         <h2>Usuarios</h2>
+        <a href='#' v-on:click="activeuser = ''">reset</a>
         <ul>
             <li v-for="user in users">
                 {{ user.username }} [ {{ user.email }} ]
@@ -20,14 +22,17 @@
                 <a href="#" v-on:click="getpostsfromuser(user.id, user.username)">posts</a>
             </li>
         </ul>
-        
-        <h2 v-if="activeuser">Posts do {{ activeuser }} </h2>
-        <ul>
-            <li v-for="post in posts">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.body }}</p>
-            </li>
-        </ul>
+
+        <div v-if="activeuser" style="background: silver">
+            <i  v-show="loading" class="fa fa-spinner fa-spin"></i>
+            <h2>Posts do {{ activeuser }} </h2>
+            <ul>
+                <li v-for="post in posts">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.body }}</p>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -35,7 +40,8 @@
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Teste (jsonplaceholder.typicode.com)',
+                message: 'Teste Vue (jsonplaceholder.typicode.com)',
+                loading: false,
                 title: '',
                 activeuser: '',
                 posts: [],
@@ -43,12 +49,17 @@
             },
             methods: {
                 getpostsfromuser: function (userId, name) {
+                    //-- seta usuario ativo
+                    app._data.loading = true;
                     app._data.activeuser = name;
-                    fetch("https://jsonplaceholder.typicode.com/posts?userId="+userId)
+                    //-- busca posts
+                    app._data.posts = [];
+                    fetch("https://jsonplaceholder.typicode.com/posts?userId=" + userId)
                         .then(response => response.json())
                         .then(function (json) {
                             console.log(json);
                             app._data.posts = json;
+                            app._data.loading = false;
                         });
                 },
                 say: function (what) {
