@@ -14,7 +14,9 @@
     <div id="app">
         <h5>{{ message }}</h5>
         <h2>Usuarios</h2>
+        <!-- reset: limpa activeuser -->
         <a href='#' v-on:click="activeuser = ''">reset</a>
+        <!-- lista usuarios -->
         <ul>
             <li v-for="user in users">
                 {{ user.username }} [ {{ user.email }} ]
@@ -22,9 +24,9 @@
                 <a href="#" v-on:click="getpostsfromuser(user.id, user.username)">posts</a>
             </li>
         </ul>
-
+        <!-- se tiver activeuser, mostra.. e lista os posts desse usuario -->
         <div v-if="activeuser" style="background: silver">
-            <i  v-show="loading" class="fa fa-spinner fa-spin"></i>
+            <i v-show="loading" class="fa fa-spinner fa-spin"></i>
             <h2>Posts do {{ activeuser }} </h2>
             <ul>
                 <li v-for="post in posts">
@@ -32,6 +34,9 @@
                     <p>{{ post.body }}</p>
                 </li>
             </ul>
+        </div>
+        <div v-else>
+            <h4>sem post</h4>
         </div>
     </div>
 
@@ -65,16 +70,18 @@
                 say: function (what) {
                     alert(what);
                 }
+            },
+            mounted: function () {
+                fetch("https://jsonplaceholder.typicode.com/users")
+                    .then(response => response.json())
+                    // .then(json => console.log(json))
+                    .then(function (json) {
+                        console.log(json);
+                        app._data.users = json;
+                    })
             }
         });
 
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            // .then(json => console.log(json))
-            .then(function (json) {
-                console.log(json);
-                app._data.users = json;
-            });
     </script>
 
 </body>
