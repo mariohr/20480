@@ -1,0 +1,23 @@
+
+#px {
+    font-size: 20px;
+    outline: 2px solid green;
+}
+
+#px::after {
+    background-color: red;
+    font-size: 100px;
+}
+
+#em {
+    font-size: 1.25em;
+}
+
+#rem {
+    font-size: 1.25em;
+}
+
+img {
+    height: calc(100vh - 50px);
+    width: calc(100vw - 50px);
+}

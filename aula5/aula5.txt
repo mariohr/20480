@@ -1,0 +1,67 @@
+CSS3
+
+regras:
+
+@font-face {
+    font-family: minhafonte;
+    src: url('ssss.tff');
+}
+
+p {
+    font: minhafonte;
+}
+
+
+tamanhos relativos:
+
+em - relativo ao elemento pai
+rem - relativo a raiz (geralmente body)
+
+tamanho_desejado / tamanho_elemento_pai
+
+20 / 16 = 1.25em
+
+
+*** RELATIVOS A VIEWPORT *** JANELA
+
+1vw - 1% width da VIEWPORT
+1vh - 1% height da VIEWPORT
+vmin - o menor entre vh ou vw
+
+img {
+    max-height: calc(100vh - 5px);
+    max-width: calc(100vw - 5px);
+}
+-- nesse caso a imagem é setado para o tamanho maximo da janela, menos 5px...
+
+
+display: block -> bloco todo
+display: inline -> so o conteudo
+
+display: flex  -> flowpanel
+
+
+position: relative -> o box continua igual, mas vc mexe na posicao dele dentro do box, relativo a sua posicao
+left, top, bottom passam a obedecer
+
+position: fixed -> relativo a janela, chumba acima, abaixo
+
+position: absolute -> o filho 'absoluto' é relativo ao pai dele... 
+como se o pai fosse sua janela.
+
+
+pseudo-elementos
+
+p::first-letter (primeira letra do p)
+::first-line
+
+::before ::after  -> espaco antes e depois
+
+::selection -> ao texto selecionado
+
+::hover -> mouse em cima
+
+p:first-child
+:empty
+:root
+
