@@ -1,0 +1,12 @@
+module 7 - objects js
+
+obj.prototype = construtor
+
+
+var Person = function(name, age) {
+    var _nome, _age;  // private
+
+    this.getName = function() {    // <-- publico
+        return _nome;
+    }
+}
