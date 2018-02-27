@@ -1,2 +1,11 @@
 modulo 8 - html5 api
 
+acesso arquivo local
+
+Blob - binario
+File - readonly
+FileList - lista de arquivos
+FileReader - ler um arquivo
+
+navigator.onLine
+
