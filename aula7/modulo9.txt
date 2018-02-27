@@ -15,3 +15,8 @@ window.addEventListener("storage", function(key, oldValue, newValue, uril, stora
 localStorage - persiste
 sessionStorage - não persiste
 
+IndexedDB - nosql localStorage
+
+window.IndexedDB
+
+window.IDBTransaction
