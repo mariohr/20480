@@ -1,0 +1,17 @@
+modulo 9 -> offline suporte
+--------------
+
+sessionStorage.setItem
+sessionStorage["mykey"]
+sessionStorage.mykey
+
+if (window.localStorage)  <- ver se suporta
+
+eventos storage
+
+window.addEventListener("storage", function(key, oldValue, newValue, uril, storageArea )
+{}))
+
+localStorage - persiste
+sessionStorage - não persiste
+
