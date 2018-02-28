@@ -1,2 +1,27 @@
 adaptive interface
 
+link rel type media="screen" "print"   -> aplica o css para o tipo de media
+
+ou no css
+
+
+----- so aplica para media indicada  (@ = regra)
+@media print {
+    h1{
+
+    }
+    p{
+
+    }
+}
+
+
+query
+
+@media screen
+    and (max-device-width: 800px)
+    and (orientation: portrait) {
+
+    }
+
+    and (min-width: 100px) 
