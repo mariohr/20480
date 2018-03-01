@@ -1,0 +1,9 @@
+modulo 12 - animacoes
+
+div {
+    transition: transform 3s;   --> como quer que aconteça
+}
+
+div:hover {
+    transform: rotate(90deg);
+}
